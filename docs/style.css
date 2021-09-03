@@ -1,0 +1,35 @@
+body{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-recipe{
+    width: 20vw;
+    height: 25rem;
+}
+.card-recipe-header, .card-recipe-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 0 10px;
+}
+.card-recipe-time{
+    display: flex;
+    flex-direction: row-reverse;
+}
+#card-recipe-list-ingredients{
+    list-style: none;
+    margin-left: -2.5rem;
+    
+    
+}
+.card-recipe-text{
+ text-align: justify;
+   
+}
