@@ -1,5 +1,7 @@
 body{
-   
+    --blue: #007bff;
+    --green: #68D9A4;
+    --red: #ED6454;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,9 +10,37 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 20vw;
+}
+.btn-ingredient, .button--blue{
+    background-color: var(--blue);
+}
+.button--green, .btn-appliance{
+    background-color: var(--green);
+}
+.button--red, .btn-ustensils{
+    background-color: var(--red);
+}
+
+.button--blue, .button--green, .button--red{
+    border-style: none;
+}
+.button--blue::placeholder, .button--green::placeholder
+, .button--red::placeholder{
+    color: white;
+}
+
+.fa-chevron-down{
+    color: white;
+    cursor: pointer;
 }
 .card-recipe{
-    height: 25rem;
+    min-height: 25rem;
+    min-width:20rem;
+    border: 1px solid #cfcbcb;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #E7E7E7;
 }
 .card-recipe-header, .card-recipe-content{
     display: flex;
@@ -21,11 +51,12 @@ body{
 .card-recipe-time{
     display: flex;
     flex-direction: row-reverse;
+    white-space: nowrap;
 }
 #card-recipe-list-ingredients{
     list-style: none;
     margin-left: -2.5rem;
-    
+    text-overflow: hidden;
     
 }
 .card-recipe-text{
@@ -33,4 +64,5 @@ body{
  overflow: hidden;
  text-overflow: ellipsis; 
  height: 12rem; 
+ width: 60%;
 }

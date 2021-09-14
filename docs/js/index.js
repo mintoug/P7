@@ -1,4 +1,5 @@
 import { recipes } from "./recipes.js";
+// import {showIngredients, showAppliances, showUstensils} from "./dropdown.js";
 
 let recipesList = document.getElementById('recipes-list');
 
@@ -25,8 +26,8 @@ const recipeIngredientsListTemplate = (recipeIngredients) => {
 
  /*function showing the card list using bootstrap classes*/
 const recipesListTemplate = (recipe) => {
-  return `<div class="col mb-3">
-          <div class="card h-100">
+  return `<div class="col">
+          
 <div class="card-recipe">
         <img src="./photos/img.png" class="card-img-top" alt="recette de ${recipe.name} />
         <div class="card-recipe-body">

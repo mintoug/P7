@@ -5,6 +5,13 @@ let appliances = document.querySelector('.appareils-list');
 let ustensils = document.querySelector('.ustensiles-list');
 let Ingredients = document.querySelector('.ingredients-list');
 
+let chevron = document.querySelectorAll('.fa-chevron-down');
+
+// dislay-on the drop-down on click
+
+
+
+
 
 
 
@@ -35,4 +42,4 @@ function showIngredients() {
 
 
 
-export {showIngredients, showAppliances, showUstensils}
+//  export {showIngredients, showAppliances, showUstensils}
