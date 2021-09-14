@@ -10,7 +10,6 @@ body{
     margin-right: auto;
 }
 .card-recipe{
-    width: 20vw;
     height: 25rem;
 }
 .card-recipe-header, .card-recipe-content{
@@ -31,5 +30,7 @@ body{
 }
 .card-recipe-text{
  text-align: justify;
-   
+ overflow: hidden;
+ text-overflow: ellipsis; 
+ height: 12rem; 
 }
