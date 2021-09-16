@@ -11,6 +11,11 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 20vw;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.fa-search{
+    cursor:pointer;
 }
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
@@ -34,6 +39,29 @@ body{
     color: white;
     cursor: pointer;
 }
+.dropdown-body {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    height: 0; 
+}
+.is-open{
+    width: 100%;
+    height: auto;
+}
+.input--open {
+    width: 800px;
+    transition-property: width;
+    transition-delay: 0.2s;
+    border-radius: 0.3rem 0.3rem 0 0;
+    border: none;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card-recipe{
     min-height: 25rem;
     min-width:20rem;
@@ -65,4 +93,11 @@ body{
  text-overflow: ellipsis; 
  height: 12rem; 
  width: 60%;
+}
+@media screen and (max-width:973px){
+    .drops-and-badgs{
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
