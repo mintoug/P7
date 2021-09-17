@@ -5,22 +5,9 @@ let appliances = document.querySelector('.appliance-list');
 let ustensils = document.querySelector('.ustensiles-list');
 let Ingredients = document.querySelector('.ingredients-list');
 
-let inputs = document.querySelectorAll('.inputs');
-let inputIngredient = document.querySelector('.button-blue');
-let inputAppliance =  document.querySelector('.button-green');
-let inputUsetensils = document.querySelector('.button-red');
 
 
-inputAppliance.addEventListener('keyup', showAppliances());
 
- function showAppliances() {
-             for (let i = 0; i < recipes.length; i++) {
-        
-                appliances.innerHTML += `<span>${recipes[i].appliance}</span>`;
-}
-
-    }
-    
     
     
     
