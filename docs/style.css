@@ -26,7 +26,7 @@ body{
 .button--green, .btn-appliance{
     background-color: var(--green);
 }
-.button--red, .btn-ustensils{
+.button--red,.btn-ustensils{
     background-color: var(--red);
 }
 
