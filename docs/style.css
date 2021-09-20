@@ -12,10 +12,13 @@ body{
     margin-right: auto;
     width: 20vw;
     margin-top: 20px;
-    margin-bottom: 10px;
+   
 }
 .fa-search{
     cursor:pointer;
+}
+#input-result{
+    display: inline-block;
 }
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
@@ -99,5 +102,8 @@ body{
         margin-bottom: 15px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .logo{
+        width: 50vw;
     }
 }
