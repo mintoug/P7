@@ -15,7 +15,7 @@ inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
     let inputValue = inputIngredient.value;
     inputResult.innerHTML =inputValue;
-   return tag=inputValue;
+   
     }
 });
 
@@ -23,23 +23,27 @@ inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
      let inputValue = inputAppliance.value;
      inputResult.innerHTML =inputValue;
+     filterRecipesAppliance(inputResult);
    }
+
+
+ 
  });
+
+
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
      let inputValue = inputUsetensils.value;
      inputResult.innerHTML =inputValue;
-     return inputValue=tag}
+     }
  });
 
 
-function filterRecipesAppliance(){
-    
-   do{
-        if(recipes[i].appliance.includes(toString(inputResult))){
-         filteredRecipes=filteredRecipes.push(recipes[i]);
-        } else{i++;} 
-    }
- while(i<recipes.length)}
- filterRecipesAppliance();
- console.log(filteredRecipes)
+ function filterRecipesAppliance(){
+  do{
+    if(recipes[i].appliance.includes(inputResult)){
+     filteredRecipes=filteredRecipes.push(recipes[i]);console.log('hello')
+    } else{i++;} 
+}
+while(i<recipes.length)}
+console.log(filteredRecipes);

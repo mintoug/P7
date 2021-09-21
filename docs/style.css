@@ -42,23 +42,44 @@ body{
     color: white;
     cursor: pointer;
 }
-.dropdown-body {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-    height: 0; 
+#input-result{
+    display: inline-block;
+    width: max-content;
+    height: 20px;
+    background-color: var(--blue);
+    color: white;
+   font-size: small;
 }
-.is-open{
-    width: 100%;
-    height: auto;
+.appliance-list>li{
+    position: relative;
+   
+    background-color: var(--green);
+    color: white;
+    overflow: hidden;
+    width: 40vw;
+ }
+.ustensiles-list>li{
+    position: relative;
+    background-color: var(--red);
+    color: white;
+    overflow: hidden;
+    width: 40vw;
 }
-.input--open {
-    width: 800px;
-    transition-property: width;
-    transition-delay: 0.2s;
-    border-radius: 0.3rem 0.3rem 0 0;
-    border: none;
+.ingredients-list>li{
+    position: relative;
+    background-color: var(--blue);
+    color: white;
+    overflow: hidden;
+    width: 40vw;
+}
+.dropdown-header:focus-within{
+    width: 40vw;
+}
+.inputs{
+width: 100%;
+}
+.ustensiles-list,.ingredients-list,.appliance-list{ 
+    height: 200px;
 }
 .flex{
     display: flex;
