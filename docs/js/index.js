@@ -25,7 +25,7 @@ const recipeIngredientsListTemplate = (recipeIngredients) => {
 };
 
  /*function showing the card list using bootstrap classes*/
-const recipesListTemplate = (recipe) => {
+const recipesListTemplate  = (recipe) => {
   return `<div class="col">
           
 <div class="card-recipe">

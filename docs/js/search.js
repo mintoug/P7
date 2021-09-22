@@ -1,12 +1,11 @@
 import { recipes } from "./recipes.js";
-
+import { recipesListTemplate } from "./index.js";
 
 const chevron = document.querySelector('.chevron');
 const inputIngredient = document.querySelector('.button--blue');
 const inputAppliance =  document.querySelector('.button--green');
 const inputUsetensils = document.querySelector('.button--red');
-let inputResult= document.querySelector('#input-result')
-let recipesList = document.querySelector('#recipes-list');
+let inputResult= document.querySelector('#input-result');
 let filteredRecipes=[];
 let i=0;
 
@@ -23,11 +22,9 @@ inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
      let inputValue = inputAppliance.value;
      inputResult.innerHTML =inputValue;
-     filterRecipesAppliance(inputResult);
-   }
+     filterRecipesAppliance();
+        }
 
-
- 
  });
 
 
@@ -40,10 +37,16 @@ inputAppliance.addEventListener('input', ()=>{
 
 
  function filterRecipesAppliance(){
-  do{
-    if(recipes[i].appliance.includes(inputResult)){
-     filteredRecipes=filteredRecipes.push(recipes[i]);console.log('hello')
-    } else{i++;} 
+  do{     
+    if(recipes[i].appliance.includes(inputResult.innerHTML)){
+      filteredRecipes.push(recipes[i]);
+      console.log(recipes[i].id);
+      
+      
+       } 
+     i++;
 }
-while(i<recipes.length)}
-console.log(filteredRecipes);
+while(i < recipes.length);console.log(filteredRecipes)
+
+}
+

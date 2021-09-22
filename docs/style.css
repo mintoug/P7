@@ -50,9 +50,9 @@ body{
     color: white;
    font-size: small;
 }
+
 .appliance-list>li{
     position: relative;
-   
     background-color: var(--green);
     color: white;
     overflow: hidden;
@@ -62,7 +62,6 @@ body{
     position: relative;
     background-color: var(--red);
     color: white;
-    overflow: hidden;
     width: 40vw;
 }
 .ingredients-list>li{
@@ -72,6 +71,7 @@ body{
     overflow: hidden;
     width: 40vw;
 }
+
 .dropdown-header:focus-within{
     width: 40vw;
 }
