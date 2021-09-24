@@ -8,17 +8,7 @@ let Ingredients = document.querySelector('.ingredients-list');
 showAppliances(); 
 showUstensils();
 showIngredients();
-    
-    
 
-
-    //console.log(ingredientArray[1])
-// function showAppliances() {
-//     for (let i = 0; i < recipes.length; i++) {
-   
-//         appliances.innerHTML += `<li>${recipes[i].appliance}</li>`;
-        
-//     }}
 function showAppliances(){
     let applianceItems =[];
     for(let i = 0; i < recipes.length; i++){
@@ -28,10 +18,7 @@ function showAppliances(){
     for (let k=0; k<noDoubleAppliance.length; k++){
         appliances.innerHTML += `<li>${noDoubleAppliance[k]}</li>`;
     }
-
 }
-
-
 
 function showUstensils() {
     let ustensilsItem =[];
@@ -40,22 +27,22 @@ function showUstensils() {
     let noDoubleUstensils = ustensilsItem.filter((item, index)=>ustensilsItem.indexOf(item)===index)
     for (let k=0; k<noDoubleUstensils.length; k++){   
     ustensils.innerHTML += `<li>${noDoubleUstensils[k]}</li>`;
-    
 }}
 
 function showIngredients() {
+    let ingredientArray=[]; let ingredientItem=[];
     for (let j = 0; j < recipes.length; j++) {
-        let ingredientArray =  recipes[j].ingredients;{
-        let ingredientItem =[];
-        for(let k=0; k<ingredientArray.length;k++){
-            ingredientItem.push(ingredientArray[k].ingredient);
-        }
+         ingredientArray.push(recipes[j].ingredients);}
+      //  console.log(ingredientArray)
+   for(let elt in ingredientArray){
+             let item = ingredientArray[elt][0].ingredient;
+             ingredientItem.push(item) }           
+           // console.log(ingredientItem)
         let noDoubleIngredient = ingredientItem.filter((item, index)=>ingredientItem.indexOf(item)===index)
         for (let i = 0; i < noDoubleIngredient.length; i++) {       
              Ingredients.innerHTML += `<li>${noDoubleIngredient[i]}</li>`; 
         }}
-    }}
-
+    
 
 
 
