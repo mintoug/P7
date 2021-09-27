@@ -53,4 +53,4 @@ const recipesListTemplate  = (recipe) => {
 
 recipesList.innerHTML = recipes.map((recipe) => recipesListTemplate(recipe)).join("");
 
- export {recipesListTemplate} 
+ export {recipesListTemplate, recipeIngredientsListTemplate} 

@@ -1,3 +1,4 @@
+import {recipeIngredientsListTemplate } from "./index.js";
 import { recipes } from "./recipes.js";
 
 
@@ -5,7 +6,7 @@ const inputIngredient = document.querySelector('.button--blue');
 const inputAppliance =  document.querySelector('.button--green');
 const inputUsetensils = document.querySelector('.button--red');
 let inputResult= document.querySelector('#input-result');
-let filteredRecipes=[];
+let recipesList = document.getElementById('recipes-list');
 let filteredUstensil=[]
 let filteredIngredient=[];
 
@@ -13,26 +14,21 @@ let filteredIngredient=[];
 /*show the input*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
-    let inputValue = inputIngredient.value;
-    inputResult.innerHTML =inputValue;
     filterRecipesIngredients()
     }
 });
 
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
-     let inputValue = inputAppliance.value;
-     inputResult.innerHTML =inputValue;
-     filterRecipesAppliance();
+        filterRecipesAppliance();
+       // displayRecipesFiltered();
         }
  });
 
 
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
-     let inputValue = inputUsetensils.value;
-     inputResult.innerHTML =inputValue;
-     filterRecipesUstensils()
+         filterRecipesUstensils()
      }
  });
 
@@ -40,23 +36,24 @@ inputAppliance.addEventListener('input', ()=>{
  function filterRecipesAppliance(){
    for (let i=0; i<recipes.length;i++){
     let x =recipes[i].appliance.toLowerCase();
+    let filteredRecipes=[];
    if( x.includes(inputResult.innerHTML.toLowerCase())){
       filteredRecipes.push(recipes[i]);
-      console.log(recipes[i].id);
-   }}}
+     console.log(filteredRecipes);
+     return filteredRecipes;
+   }}
+  }
  
  
 function filterRecipesUstensils(){
   let ustensils = []
   for (let l=0;l<recipes.length;l++){
-    ustensils.push(recipes[l].ustensils)
-  }
-
-for(let i=0; i<recipes.length; i++){
+    ustensils.push(recipes[l].ustensils)}
+  for(let i=0; i<ustensils.length; i++){
     let y =   ustensils[i][0].toLowerCase() ;
     if(y.includes(inputResult.innerHTML.toLowerCase())){
       filteredUstensil.push(recipes[i]);
-console.log(recipes[i].id);
+      console.log(recipes[i].id);
 } }}
 
 
@@ -68,10 +65,39 @@ console.log(recipes[i].id);
    
    for (let j=0; j<ingredients.length;j++){
      ingredientTable.push(ingredients[j][0].ingredient)
+     console.log(ingredientTable)
    }
    for (let elt in ingredientTable){
      if(ingredientTable[elt].toLowerCase().includes(inputResult.innerHTML.toLowerCase())){
        filteredIngredient.push(recipes[elt])
        console.log(recipes[elt].id)
      }
-   }}
+   }
+     displayRecipesFiltered= (filteredRecipes) => {
+      return `<div class="col">
+              
+    <div class="card-recipe">
+            <img src="./photos/img.png" class="card-img-top" alt="recette de ${ filteredRecipes.name} />
+            <div class="card-recipe-body">
+                <div class="card-recipe-header">
+                    <h5 class="card-recipe-title">${filteredRecipes.name}</h5>
+                    <div class="card-recipe-time">
+                        <span><i class="far fa-clock"></i></span>
+                        <p>${filteredRecipes.time} min</p>
+                    </div>
+                </div>
+                <div class="card-recipe-content">
+                    <ul id="card-recipe-list-ingredients">
+                    ${filteredRecipes.ingredients.map(recipeIngredientsListTemplate).join("")}
+                    </ul>
+                    <p class="card-recipe-text"> ${filteredRecipes.description}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+          `;
+    };
+    
+  }
+  recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
