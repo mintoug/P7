@@ -7,14 +7,14 @@ const inputAppliance =  document.querySelector('.button--green');
 const inputUsetensils = document.querySelector('.button--red');
 let inputResult= document.querySelector('#input-result');
 let recipesList = document.getElementById('recipes-list');
-let filteredUstensil=[]
+let filteredUstensil=[];
 let filteredIngredient=[];
 
 
 /*show the input*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
-    filterRecipesIngredients()
+         filterRecipesIngredients();
     }
 });
 
@@ -35,13 +35,11 @@ inputAppliance.addEventListener('input', ()=>{
 
  function filterRecipesAppliance(){
    for (let i=0; i<recipes.length;i++){
-    let x =recipes[i].appliance.toLowerCase();
-    let filteredRecipes=[];
-   if( x.includes(inputResult.innerHTML.toLowerCase())){
+        let filteredRecipes=[];
+   if(recipes[i].appliance.toLowerCase().includes(inputResult.innerHTML.toLowerCase())){
       filteredRecipes.push(recipes[i]);
      console.log(filteredRecipes);
-     return filteredRecipes;
-   }}
+     }}
   }
  
  
@@ -68,36 +66,9 @@ function filterRecipesUstensils(){
      console.log(ingredientTable)
    }
    for (let elt in ingredientTable){
-     if(ingredientTable[elt].toLowerCase().includes(inputResult.innerHTML.toLowerCase())){
+     if(ingredientTable[elt].includes(inputResult.innerHTML)){
        filteredIngredient.push(recipes[elt])
        console.log(recipes[elt].id)
      }
-   }
-     displayRecipesFiltered= (filteredRecipes) => {
-      return `<div class="col">
-              
-    <div class="card-recipe">
-            <img src="./photos/img.png" class="card-img-top" alt="recette de ${ filteredRecipes.name} />
-            <div class="card-recipe-body">
-                <div class="card-recipe-header">
-                    <h5 class="card-recipe-title">${filteredRecipes.name}</h5>
-                    <div class="card-recipe-time">
-                        <span><i class="far fa-clock"></i></span>
-                        <p>${filteredRecipes.time} min</p>
-                    </div>
-                </div>
-                <div class="card-recipe-content">
-                    <ul id="card-recipe-list-ingredients">
-                    ${filteredRecipes.ingredients.map(recipeIngredientsListTemplate).join("")}
-                    </ul>
-                    <p class="card-recipe-text"> ${filteredRecipes.description}</p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-          `;
-    };
-    
-  }
-  recipesList.innerHTML = filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
+   }}
+  

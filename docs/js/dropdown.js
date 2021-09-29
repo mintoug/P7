@@ -48,4 +48,4 @@ function showIngredients() {
 
 
 
- export {showIngredients, showAppliances, showUstensils}
+ 

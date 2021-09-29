@@ -56,24 +56,24 @@ body{
     background-color: var(--green);
     color: white;
     overflow: hidden;
-    width: 40vw;
+    width: 30vw;
  }
 .ustensiles-list>li{
     position: relative;
     background-color: var(--red);
     color: white;
-    width: 40vw;
+    width: 30vw;
 }
 .ingredients-list>li{
     position: relative;
     background-color: var(--blue);
     color: white;
     overflow: hidden;
-    width: 40vw;
+    width: 30vw;
 }
 
 .dropdown-header:focus-within{
-    width: 40vw;
+    width: 30vw;
 }
 .inputs{
 width: 100%;
