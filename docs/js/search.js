@@ -1,4 +1,4 @@
-import {recipeIngredientsListTemplate } from "./index.js";
+import {recipeIngredientsListTemplate, recipeIngredientsListTemplate} from "./index.js";
 import { recipes } from "./recipes.js";
 
 
@@ -9,66 +9,89 @@ let inputResult= document.querySelector('#input-result');
 let recipesList = document.getElementById('recipes-list');
 let filteredUstensil=[];
 let filteredIngredient=[];
+let filteredRecipes=[];
 
-
-/*show the input*/
+/*show the inputs in the span of the top*/
+/*in ingrdient*/
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
-         filterRecipesIngredients();
+       inputResult.innerHTML = inputIngredient.value;
+         filterRecipesIngredients(inputIngredient.value);
+         
     }
 });
-
+/*in appliance*/
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
+        inputResult.innerHTML=inputAppliance.value;
         filterRecipesAppliance();
-       // displayRecipesFiltered();
+        
         }
  });
 
-
+/*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
-         filterRecipesUstensils()
+        inputResult.innerHTML=inputUsetensils.value;
+         filterRecipesUstensils();
      }
  });
 
-
+/**the functions to filter recipes  */
+/**filter the appliances */
  function filterRecipesAppliance(){
-   for (let i=0; i<recipes.length;i++){
-        let filteredRecipes=[];
+
+  for (let i=0; i<recipes.length;i++){
+      
    if(recipes[i].appliance.toLowerCase().includes(inputResult.innerHTML.toLowerCase())){
+       //test if recipes exists  yet 
+       if(!filteredRecipes.includes(recipes[i])){
       filteredRecipes.push(recipes[i]);
-     console.log(filteredRecipes);
-     }}
+       }
+     }
+    }
+    console.log(filteredRecipes); 
+    
   }
- 
+  
+ /**filter ustensils */
  
 function filterRecipesUstensils(){
-  let ustensils = []
+  let ustensilsTable = []
   for (let l=0;l<recipes.length;l++){
-    ustensils.push(recipes[l].ustensils)}
-  for(let i=0; i<ustensils.length; i++){
-    let y =   ustensils[i][0].toLowerCase() ;
-    if(y.includes(inputResult.innerHTML.toLowerCase())){
-      filteredUstensil.push(recipes[i]);
-      console.log(recipes[i].id);
-} }}
+    ustensilsTable.push(recipes[l].ustensils)
+  
+  for(let i=0; i<ustensilsTable.length; i++){
+         for (let elt in ustensilsTable[i]){
+             if(ustensilsTable[i][elt].toLowerCase() === inputResult.innerHTML.toLowerCase()){
+      if (!filteredUstensil.includes(recipes[l])){
+      filteredUstensil.push(recipes[l])}
+      
+    }}}
+     
+    }console.log(filteredUstensil) } 
 
+/**filter ingredients */
 
  function filterRecipesIngredients(){
-   let ingredients =[];
-   let ingredientTable=[];
-   for(let i=0;i<recipes.length;i++){
-     ingredients.push(recipes[i].ingredients)}
-   
-   for (let j=0; j<ingredients.length;j++){
-     ingredientTable.push(ingredients[j][0].ingredient)
-     console.log(ingredientTable)
-   }
-   for (let elt in ingredientTable){
-     if(ingredientTable[elt].includes(inputResult.innerHTML)){
-       filteredIngredient.push(recipes[elt])
-       console.log(recipes[elt].id)
-     }
-   }}
-  
+   let filteredIngredients =[];
+  // console.log(filteredIngredients);
+    for(let i=0; i<recipes.length; i++){
+        let tableIngredientsDetails = recipes[i].ingredients;
+        
+        for(let n in tableIngredientsDetails ){
+            
+            let tableIngredients = tableIngredientsDetails[n].ingredient.toLowerCase();
+        
+       if (tableIngredients == inputIngredient.value.toLowerCase()){
+        
+          filteredIngredients.push(recipes[i]);
+          
+    }
+}
+}console.log(filteredIngredients);
+return filteredIngredients;
+}
+ 
+
+

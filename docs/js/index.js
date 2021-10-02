@@ -8,7 +8,7 @@ let recipesList = document.getElementById('recipes-list');
 
 
 /*function to show the ingredient list*/
-const recipeIngredientsListTemplate = (recipeIngredients) => {
+function recipeIngredientsListTemplate (recipeIngredients){
   if (!recipeIngredients.unit && !recipeIngredients.quantity) {
     return `<li class="card-recipe-list-ingredients-name">
             <strong>${recipeIngredients.ingredient}</strong>
@@ -25,7 +25,7 @@ const recipeIngredientsListTemplate = (recipeIngredients) => {
 };
 
  /*function showing the card list using bootstrap classes*/
-const recipesListTemplate  = (recipe) => {
+function recipesListTemplate (recipe) {
   return `<div class="col">
           
 <div class="card-recipe">

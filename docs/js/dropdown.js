@@ -1,13 +1,23 @@
 import { recipes } from "./recipes.js";
 
-
+/** declaratio of variables */
 let appliances = document.querySelector('.appliance-list');
 let ustensils = document.querySelector('.ustensiles-list');
 let Ingredients = document.querySelector('.ingredients-list');
+let closeButton =document.querySelector('.fa-times-circle');
+let textInput = document.querySelector('.text-input')
 
+
+
+
+/** functions to show items of dropdown-menu */
 showAppliances(); 
 showUstensils();
 showIngredients();
+ 
+closeButton.addEventListener('click', () =>{
+    textInput.style.visibility="hidden"
+})
 
 function showAppliances(){
     let applianceItems =[];
