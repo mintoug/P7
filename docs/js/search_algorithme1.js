@@ -7,6 +7,7 @@ const inputAppliance =  document.querySelector('.button--green');
 const inputUsetensils = document.querySelector('.button--red');
 let inputResult= document.querySelector('#input-result');
 let recipesList = document.getElementById('recipes-list');
+let textInput = document.querySelector('.text-input')
 let filteredUstensil=[];
 let filteredRecipes=[];
 let filteredIngredients=[];
@@ -19,6 +20,7 @@ let filteredIngredients=[];
 inputIngredient.addEventListener('input', ()=>{
    if(inputIngredient.value.length>2){
        inputResult.innerHTML = inputIngredient.value;
+       textInput.style.visibility="visible";
          filterRecipesIngredients(inputIngredient);
          recipesList.innerHTML = filteredIngredients.map((recipe) => recipesListTemplate(recipe)).join("");  
     }
@@ -27,6 +29,7 @@ inputIngredient.addEventListener('input', ()=>{
 inputAppliance.addEventListener('input', ()=>{
     if(inputAppliance.value.length>2){
         inputResult.innerHTML=inputAppliance.value;
+        textInput.style.visibility="visible";
         filterRecipesAppliance(inputAppliance);
             recipesList.innerHTML =filteredRecipes.map((recipe) => recipesListTemplate(recipe)).join("");
         }
@@ -35,8 +38,12 @@ inputAppliance.addEventListener('input', ()=>{
 /*in usetensils*/
  inputUsetensils.addEventListener('input', ()=>{
     if(inputUsetensils.value.length>2){
+        //activate the span
         inputResult.innerHTML=inputUsetensils.value;
+        textInput.style.visibility="visible";
+        //function to filter
          filterRecipesUstensils(inputUsetensils);
+         //show the recipes filtered
          recipesList.innerHTML =filteredUstensil.map((recipe) => recipesListTemplate(recipe)).join("");
      }
  });

@@ -17,9 +17,6 @@ body{
 .fa-search{
     cursor:pointer;
 }
-#input-result{
-    display: inline-block;
-}
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
 }
@@ -51,7 +48,7 @@ body{
 }
 .text-input{
     background-color: var(--blue);
-    /*visibility: hidden;*/
+    visibility: hidden;
     display: flex;
     width: max-content;
     padding:0 5px;
@@ -59,7 +56,7 @@ body{
     
 }
 #input-result{
-    display: inline-block;
+   /* visibility: hidden;*/
     width: max-content;
     height: 30px;
     background-color: var(--blue);
@@ -67,6 +64,7 @@ body{
    font-size:small;
    font-weight: bold;
    border-radius: 5px;
+   display: block;
    
 }
 
