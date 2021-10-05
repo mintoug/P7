@@ -17,6 +17,9 @@ body{
 .fa-search{
     cursor:pointer;
 }
+#input-result{
+    display: inline-block;
+}
 .btn-ingredient, .button--blue{
     background-color: var(--blue);
 }
@@ -43,7 +46,10 @@ body{
 .fa-times-circle{
     color: white;
     cursor: pointer;
-   
+   position: absolute;
+   top: -4px;
+   right: -4px;
+   padding-left: 3px;
    
 }
 .text-input{
@@ -53,21 +59,17 @@ body{
     width: max-content;
     padding:0 5px;
     margin-bottom: 3px;
-    
+    border-radius: 5px;
+    position: relative;
 }
 #input-result{
-   /* visibility: hidden;*/
+    display: block;
     width: max-content;
     height: 30px;
     background-color: var(--blue);
     color: white;
-   font-size:small;
-   font-weight: bold;
-   border-radius: 5px;
-   display: block;
-   
+   font-size:18px;
 }
-
 .appliance-list>li{
     position: relative;
     background-color: var(--green);
